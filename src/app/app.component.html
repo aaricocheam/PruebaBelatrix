@@ -1,0 +1,86 @@
+<div class="tagline-upper text-center text-headerfixed text-shadow text-white mt-5 d-none d-lg-block">Money Exchange IO</div>
+<div class="tagline-lower text-center text-expandedfixed text-shadow text-uppercase text-white mt-2 mb-3 d-none d-lg-block">9999 Fake Address | USA, CA 99999 | 123.456.7890</div>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-faded py-lg-1">
+  <a class="navbar-brand text-uppercase text-expanded font-weight-bold d-lg-none" href="#">Money Exchange IO</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive"
+    aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+  <div class="collapse navbar-collapse" id="navbarResponsive">
+    <ul class="navbar-nav mx-auto">
+      <!-- <li class="nav-item active px-lg-2">
+        <a class="nav-link text-uppercase text-expanded" href="#">Menú 1<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item px-lg-2">
+        <a class="nav-link text-uppercase text-expanded" href="#">Menú 2</a>
+      </li>
+      <li class="nav-item px-lg-2">
+        <a class="nav-link text-uppercase text-expanded" href="#">Menú 3</a>
+      </li>
+      <li class="nav-item px-lg-2">
+        <a class="nav-link text-uppercase text-expanded" href="#">Menú 4</a>
+      </li> -->
+    </ul>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="bg-faded p-4 my-4">
+    <hr class="divider">
+    <h2 class="text-center text-lg text-uppercase my-0"><strong>Currency Calculator</strong></h2>
+    <hr class="divider">
+
+      <div class="row">
+        <div class="clearfix"></div>
+        <div class="col-lg-4"></div>
+        <div class="form-group text-center col-lg-2">
+          <input [(ngModel)]="dolar" type="number" min="0" step="0.0001" class="form-control" placeholder="USD">          
+        </div>
+        <div class="form-group text-center col-lg-2">
+          <input type="text" class="form-control" value="{{euro | currency: 'EUR' : true : '1.0-4' }}" placeholder="EUR" [disabled]="isdisabled">
+        </div>
+        <div class="col-lg-4"></div>
+      </div>
+      <div class="row">
+        <div class="form-group text-center col-lg-12">
+          <button class="btn btn-secondary" (click)="calculate()">CALCULATE</button>
+        </div>
+      </div>
+  </div>
+</div>
+<div class="container">
+
+  <div class="bg-faded p-4 my-4">
+    <hr class="divider">
+    <h2 class="text-center text-lg text-uppercase my-0"> <strong>Results</strong></h2>
+    <hr class="divider">
+    <div class="row">
+      <!--   <div *ngFor="let item of rates"> ss</div> -->
+
+      <div class="col-md-6 mb-6 mb-md-0" *ngFor="let rate of exchangeANY.rates">
+        <div class="card h-80">
+          {{rate.name}} -- {{rate.exchange | number}}
+        </div>
+      </div>
+
+      <!--  <div class="col-md-6 mb-6 mb-md-0">
+                <div class="card h-100">
+                    <img class="card-img-top" src="http://placehold.it/750x450" alt="">
+                    <div class="card-body text-center">
+                        <h4 class="card-title m-0">John Smith <small class="text-muted">Job Title</small></h4>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mb-6 mb-md-0">
+                <div class="card h-100">
+                    <img class="card-img-top" src="http://placehold.it/750x450" alt="">
+                    <div class="card-body text-center">
+                        <h4 class="card-title m-0">John Smith <small class="text-muted">Job Title</small></h4>
+                    </div>
+                </div>
+            </div> -->
+
+    </div>
+  </div>
+</div>
